@@ -1,6 +1,6 @@
 import sys
-from DKT.KnowledgeTracing.model.DKT import DKT
-from DKT.KnowledgeTracing.model.DKTcont import DKTcont
+from KnowledgeTracing.model.DKT import DKT
+from KnowledgeTracing.model.DKTcont import DKTcont
 from DKT.KnowledgeTracing.model.Mamba4KT import Mamba4KT
 from DKT.KnowledgeTracing.model.MambaCont import MambaCont
 # from DKT.KnowledgeTracing.data.dataloader import getTrainLoader, getTestLoader, getLoader
