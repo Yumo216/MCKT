@@ -5,9 +5,9 @@ import torch.utils.data as Data
 import torch
 import torch.utils.data as Data
 from .readdata import DataReader
-from DKT.KnowledgeTracing.Constant import Constants as C
-from DKT.KnowledgeTracing.data.readdata import DataReader
-from DKT.KnowledgeTracing.data.OneHot import OneHot
+from KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.data.readdata import DataReader
+from KnowledgeTracing.data.OneHot import OneHot
 
 def getDataLoader(batch_size, num_of_questions, max_step):
     train_path, test_path = getDatasetPaths(C.DATASET)

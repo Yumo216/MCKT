@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 import torch.nn.functional as F
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.Constant import Constants as C
 from einops import rearrange, repeat, einsum
 
 

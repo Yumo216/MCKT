@@ -1,6 +1,6 @@
 import tqdm
 import torch
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.Constant import Constants as C
 import torch.nn as nn
 from sklearn import metrics
 

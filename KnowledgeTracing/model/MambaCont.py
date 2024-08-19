@@ -3,7 +3,7 @@ from torch import nn
 from mamba_ssm import Mamba
 import torch.nn.functional as F
 import torch
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.Constant import Constants as C
 
 
 class MambaCont(nn.Module):

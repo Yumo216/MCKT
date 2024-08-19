@@ -1,7 +1,7 @@
 import numpy as np
 import itertools
 import tqdm
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.Constant import Constants as C
 
 class DataReader:
     def __init__(self, path, maxstep, numofques):

@@ -2,7 +2,7 @@ from mamba_ssm import Mamba
 import yaml
 import torch
 import torch.nn as nn
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.Constant import Constants as C
 
 
 class Mamba4KT(nn.Module):

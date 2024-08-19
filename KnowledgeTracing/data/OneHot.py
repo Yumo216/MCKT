@@ -1,6 +1,6 @@
 import numpy as np
 from torch.utils.data.dataset import Dataset
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.Constant import Constants as C
 import torch
 
 class OneHot(Dataset):

@@ -1,14 +1,14 @@
 import sys
 from KnowledgeTracing.model.DKT import DKT
 from KnowledgeTracing.model.DKTcont import DKTcont
-from DKT.KnowledgeTracing.model.Mamba4KT import Mamba4KT
-from DKT.KnowledgeTracing.model.MambaCont import MambaCont
-# from DKT.KnowledgeTracing.data.dataloader import getTrainLoader, getTestLoader, getLoader
-from DKT.KnowledgeTracing.data.dataloader import getDataLoader
-from DKT.KnowledgeTracing.Constant import Constants as C
+from KnowledgeTracing.model.Mamba4KT import Mamba4KT
+from KnowledgeTracing.model.MambaCont import MambaCont
+# from KnowledgeTracing.data.dataloader import getTrainLoader, getTestLoader, getLoader
+from KnowledgeTracing.data.dataloader import getDataLoader
+from KnowledgeTracing.Constant import Constants as C
 import json
 import torch.optim as optim
-from DKT.KnowledgeTracing.evaluation import eval
+from KnowledgeTracing.evaluation import eval
 import torch
 import numpy as np
 
