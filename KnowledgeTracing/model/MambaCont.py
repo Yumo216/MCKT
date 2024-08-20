@@ -10,8 +10,6 @@ class MambaCont(nn.Module):
     def __init__(self, emb_dim, input_size, num_layers, dropout_prob, d_state, d_conv, expand, ques_cont):
         super(MambaCont, self).__init__()
 
-        # emb = nn.Embedding(2 * C.QUES, emb_dim)
-        # self.ques = emb(torch.LongTensor([i for i in range(2 * C.QUES)])).cuda()
         self.interaction_emb = nn.Embedding(2 * C.QUES + 1, emb_dim)
 
         self.ques_cont = ques_cont
@@ -35,17 +33,16 @@ class MambaCont(nn.Module):
                 num_layers=self.num_layers,
             ) for _ in range(self.num_layers)
         ])
-        self.fc = nn.Linear(emb_dim*4, C.QUES)
+        self.fc = nn.Linear(emb_dim * 4, C.QUES)
         self.sig = nn.Sigmoid()
 
-        self.LayerNorm = nn.LayerNorm(emb_dim*4, eps=1e-12)
+        self.LayerNorm = nn.LayerNorm(emb_dim * 4, eps=1e-12)
         self.dropout = nn.Dropout(self.dropout_prob)
 
     def forward(self, x, q_id):  # shape of input: [batch_size, length, 2q ]
 
-        x_e = self.interaction_emb(x)  # [BS,200,256]
-        x_cont = self.ques_cont[q_id]  # [BS,200,768]
-
+        x_e = self.interaction_emb(x)  # [BS,L,256]
+        x_cont = self.ques_cont[q_id]  # [BS,L,768]
 
         '''Add'''
         # x_d_1 = F.pad(x_d, (0, 768))
@@ -72,10 +69,10 @@ class MambaLayer(nn.Module):
         self.num_layers = num_layers
         self.mamba = Mamba(
             # This module uses roughly 3 * expand * d_model^2 parameters
-            d_model=d_model,  # 模型维度  emb + 768
-            d_state=d_state,  # 状态空间的维度  32
-            d_conv=d_conv,  # 卷积核的维度  4
-            expand=expand,  # 扩展因子？ 2
+            d_model=d_model,  # emb + 768
+            d_state=d_state,
+            d_conv=d_conv,
+            expand=expand,
         )
         self.dropout = nn.Dropout(dropout)
         self.LayerNorm = nn.LayerNorm(d_model, eps=1e-12)

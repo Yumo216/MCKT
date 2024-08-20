@@ -3,6 +3,7 @@ import itertools
 from sklearn.model_selection import KFold
 from sklearn.model_selection import train_test_split
 
+
 class DataReader():
     def __init__(self, train_path, test_path, maxstep, num_ques):
         self.train_path = train_path
@@ -17,11 +18,11 @@ class DataReader():
                 lens = int(lens.lstrip('\ufeff').strip().strip(','))
                 ques = [int(q) for q in ques.strip().strip(',').split(',')]
                 ans = [int(a) for a in ans.strip().strip(',').split(',')]
-                slices = lens//self.maxstep + (1 if lens % self.maxstep > 0 else 0)
+                slices = lens // self.maxstep + (1 if lens % self.maxstep > 0 else 0)
                 for i in range(slices):
                     data = np.zeros(shape=[self.maxstep, 3])  # 0 ->question ID
-                    if lens > 0:                               # 1->question ID + C.Ques or 0
-                        if lens >= self.maxstep:               # 2->label (0->1, 1->2)
+                    if lens > 0:  # 1->question ID + C.Ques or 0
+                        if lens >= self.maxstep:  # 2->label (0->1, 1->2)
                             steps = self.maxstep
                         else:
                             steps = lens
@@ -35,7 +36,6 @@ class DataReader():
                         lens = lens - self.maxstep
                     datas.append(data.tolist())
             print('done: ' + str(np.array(datas).shape))
-
 
         return datas
 
@@ -59,23 +59,6 @@ class DataReader():
         print('loading test data...')
         testData = self.getData(self.test_path)
         return np.array(testData)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # import numpy as np
 # import itertools

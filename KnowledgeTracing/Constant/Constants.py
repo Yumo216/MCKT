@@ -1,29 +1,21 @@
 Dpath = '../../KTDataset'
 
 datasets = {
-    '2009' : 'assist2009',
-    '2017' : 'assist2017',
-    'XES' : 'XES3G5M',
-    'ednet': 'ednet'
+    '2017': 'assist2017',
+    'XES': 'XES3G5M',
 }
-
 
 question = {
-    'assist2009' : 16891,
-    'assist2017' : 3162,
-    'XES3G5M' : 7652,
-    'ednet': 10795
+    'assist2017': 3162,
+    'XES3G5M': 7652,
 }
 skill = {
-    'assist2009' : 110,
-    'assist2017' : 102,
-    'XES3G5M' : 865,    # 待定
-    'ednet': 1676,
+    'assist2017': 102,
+    'XES3G5M': 865,
 }
 
-DATASET = datasets['2009']
+DATASET = datasets['2017']
 QUES = question[DATASET]
-
 
 # Dataloader
 BATCH_SIZE = 128
@@ -48,5 +40,3 @@ expand = 2
 # Training
 LR = 0.001
 EPOCH = 50
-
-
