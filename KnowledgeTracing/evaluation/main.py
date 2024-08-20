@@ -29,8 +29,6 @@ with open('../../KTDataset/XES3G5M/qid2content_emb.json', 'r', encoding='utf-8')
     qid2cont = (json.load(f))  # dict [Q, 768]
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)
-# ques_cont = torch.tensor(ques_cont).repeat((2, 1)).to(device)  # [2Q, 768]
-
 
 model_name = 'Mamba'
 
@@ -59,7 +57,7 @@ optimizer = optim.Adam(model.parameters(), lr=C.LR)
 
 loss_func = eval.lossFunc(C.MAX_STEP, device).to(device)
 
-# trainLoaders, testLoaders = getLoader(C.DATASET)
+
 trainLoader, validationLoader, testLoader = getDataLoader(C.BATCH_SIZE, C.QUES, C.MAX_STEP)
 
 best_auc = 0.0
