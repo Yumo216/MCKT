@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="ssm" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.10.13 (sftp://iiserver31@iia100.slis.tsukuba.ac.jp:22/home/iiserver31/anaconda3/envs/ssm/bin/python3.10)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="A100" project-jdk-type="Python SDK" />
 </project>
