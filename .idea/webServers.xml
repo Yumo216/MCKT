@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fb63773a-3091-46e9-89f0-206550bd9289" name="A100">
+        <fileTransfer accessType="SFTP" host="iia100.slis.tsukuba.ac.jp" port="22" sshConfigId="98cbc3b6-ef1c-44a1-99d8-b4f020231cf2" sshConfig="iiserver31@iia100.slis.tsukuba.ac.jp:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
