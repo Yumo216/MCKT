@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+<<<<<<< HEAD
+  <component name="PublishConfigData" serverName="Mamba" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Mamba">
+=======
+  <component name="PublishConfigData" autoUpload="Always" serverName="iiserver31@iia100.slis.tsukuba.ac.jp:22 password" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="A100">
+>>>>>>> feccb5fdc5e3e79be3925e5d714f40fb9a09f380
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/iiserver31/Workbench/yumo/github_mckt" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+<<<<<<< HEAD
+    </serverData>
+=======
+      <paths name="iiserver31@iia100.slis.tsukuba.ac.jp:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/iiserver31/Workbench/yumo/github_mckt" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+>>>>>>> feccb5fdc5e3e79be3925e5d714f40fb9a09f380
+  </component>
+</project>
