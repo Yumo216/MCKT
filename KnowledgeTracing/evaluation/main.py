@@ -25,7 +25,7 @@ torch.manual_seed(SEED)
 torch.cuda.manual_seed(SEED)
 np.random.seed(SEED)
 
-with open('../../KTDataset/XES3G5M/qid2content_emb.json', 'r', encoding='utf-8') as f:
+with open('../../KTDataset/XES3G5M/cid2content_emb.json', 'r', encoding='utf-8') as f:
     qid2cont = (json.load(f))  # dict [Q, 768]
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)

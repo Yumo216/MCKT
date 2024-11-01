@@ -38,5 +38,5 @@ d_conv = 4
 expand = 2
 
 # Training
-LR = 0.001
+LR = 0.0001
 EPOCH = 50
