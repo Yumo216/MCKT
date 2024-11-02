@@ -1,5 +1,7 @@
 import sys
 from KnowledgeTracing.model.DKT import DKT
+from KnowledgeTracing.model.SAKT import SAKT
+from KnowledgeTracing.model.storm import testKT
 from KnowledgeTracing.model.DKTcont import DKTcont
 from KnowledgeTracing.model.Mamba4KT import Mamba4KT
 from KnowledgeTracing.model.MambaCont import MambaCont
@@ -30,11 +32,19 @@ with open('../../KTDataset/XES3G5M/cid2content_emb.json', 'r', encoding='utf-8')
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)
 
-model_name = 'Mamba'
+model_name = 'testKT'
 
 if model_name == "DKT":
     model = DKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
                 output_dim=C.OUTPUT).to(device)
+
+elif model_name == "testKT":
+    model = testKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
+                    output_dim=C.OUTPUT).to(device)
+
+elif model_name == "SAKT":
+    model = SAKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
+                    output_dim=C.OUTPUT).to(device)
 
 elif model_name == "DKT-cont":
     model = DKTcont(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,

@@ -54,7 +54,7 @@ def train_epoch(model, trainLoader, optimizer, loss_func, device):
     for batch in tqdm.tqdm(trainLoader, desc='Training:    ', mininterval=2):
         batch = batch.to(device)
         # shape of a batch:[bs, L, 2 * ques]
-        datas = torch.chunk(batch, 3, 2)
+        datas = torch.chunk(batch, 3, 2)  # [q,qa,r]
         logit = model(datas[1].squeeze(-1), datas[0].squeeze(-1))
         loss, p, a = loss_func(logit, datas)
         optimizer.zero_grad()
