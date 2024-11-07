@@ -22,19 +22,17 @@ class SAKT(nn.Module):
         self.difficulty_emb = nn.Embedding(C.QUES + 1, 1)
 
         self.output_dim = output_dim
-        self.gru = nn.RNN(emb_dim, hidden_dim, layer_dim, batch_first=True)
 
-        self.fc = nn.Linear(hidden_dim, self.output_dim)
         self.predict_linear = nn.Linear(hidden_dim, C.QUES, bias=True)
 
         '''transformer'''
-        d_model, n_heads, d_ff, dropout, kq_same, n_blocks = 128, 8, 256, 0.2, 1, 2
+        d_model, n_heads, d_ff, dropout, kq_same, n_blocks = C.EMB_DIM, 8, 256, 0.2, 1, 2
         self.blocks_2 = nn.ModuleList([
             TransformerLayer(d_model=d_model, d_feature=d_model // n_heads,
                              d_ff=d_ff, dropout=dropout, n_heads=n_heads, kq_same=kq_same)
             for _ in range(n_blocks)
         ])
-        self.position_emb = CosinePositionalEmbedding(d_model=d_model, max_len=C.MAX_STEP)
+        self.position_emb = CosinePositionalEmbedding(d_model=C.EMB_DIM, max_len=C.MAX_STEP)
 
     def forward(self, qa, q):  # [bs, L, 2q]
         qa_emb = self.qa_emb(qa)
@@ -57,17 +55,8 @@ class SAKT(nn.Module):
         for block in self.blocks_2:
             x = block(mask=0, query=x, key=x, values=y,
                       apply_pos=True)
+        x = self.predict_linear(x)
         return x
-
-
-        # difficulty = self.difficulty_emb(q)
-        # com_emb = qa_emb + difficulty * q_emb  # [bs, L, emb_dim]
-        # out, _ = self.gru(com_emb)  # [bs,l,d]
-
-        # logit = self.fc(out)  # [bs,l,1]
-        # return logit
-
-
 
 
 class TransformerLayer(nn.Module):
@@ -115,7 +104,7 @@ class TransformerLayer(nn.Module):
         if mask == 0:  # If 0, zero-padding is needed.
             # Calls block.masked_attn_head.forward() method
             query2 = self.masked_attn_head(
-                query, key, values, mask=src_mask, zero_pad=True) # 只能看到之前的信息，当前的信息也看不到，此时会把第一行score全置0，表示第一道题看不到历史的interaction信息，第一题attn之后，对应value全0
+                query, key, values, mask=src_mask, zero_pad=True)
         else:
             # Calls block.masked_attn_head.forward() method
             query2 = self.masked_attn_head(
@@ -211,18 +200,16 @@ def attention(q, k, v, d_k, mask, dropout, zero_pad):
     # print(zero_pad)
     if zero_pad:
         pad_zero = torch.zeros(bs, head, 1, seqlen).to(device)
-        scores = torch.cat([pad_zero, scores[:, :, 1:, :]], dim=2) # 第一行score置0
+        scores = torch.cat([pad_zero, scores[:, :, 1:, :]], dim=2)
     # print(f"after zero pad scores: {scores}")
     scores = dropout(scores)
     output = torch.matmul(scores, v)
-    # import sys
-    # sys.exit()
     return output
 
 
 
 class CosinePositionalEmbedding(nn.Module):
-    def __init__(self, d_model, max_len=512):
+    def __init__(self, d_model, max_len=C.MAX_STEP):
         super().__init__()
         # Compute the positional encodings once in log space.
         pe = 0.1 * torch.randn(max_len, d_model)

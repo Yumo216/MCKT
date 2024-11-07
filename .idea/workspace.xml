@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/DKT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/DKT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/storm.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/storm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +169,7 @@
       <workItem from="1723708585405" duration="12951000" />
       <workItem from="1727323112132" duration="597000" />
       <workItem from="1729236543498" duration="74000" />
-      <workItem from="1730275974070" duration="15887000" />
+      <workItem from="1730275974070" duration="16597000" />
     </task>
     <servers />
   </component>

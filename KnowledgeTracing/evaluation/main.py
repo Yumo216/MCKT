@@ -32,7 +32,7 @@ with open('../../KTDataset/XES3G5M/cid2content_emb.json', 'r', encoding='utf-8')
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)
 
-model_name = 'testKT'
+model_name = 'SAKT'
 
 if model_name == "DKT":
     model = DKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
