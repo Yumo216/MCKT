@@ -2,6 +2,7 @@ import torch.nn as nn
 from KnowledgeTracing.Constant import Constants as C
 
 
+
 class DKT(nn.Module):
     def __init__(self, emb_dim, hidden_dim, layer_dim, output_dim):
         super(DKT, self).__init__()
