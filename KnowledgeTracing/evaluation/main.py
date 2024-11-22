@@ -4,6 +4,7 @@ from KnowledgeTracing.model.SAKT import SAKT
 from KnowledgeTracing.model.storm import testKT
 from KnowledgeTracing.model.DKTcont import DKTcont
 from KnowledgeTracing.model.Mamba4KT import Mamba4KT
+from KnowledgeTracing.model.BiMamba4KT import BiMamba4KT
 from KnowledgeTracing.model.MambaCont import MambaCont
 from KnowledgeTracing.data.dataloader import getDataLoader
 from KnowledgeTracing.Constant import Constants as C
@@ -32,7 +33,7 @@ with open('../../KTDataset/XES3G5M/cid2content_emb.json', 'r', encoding='utf-8')
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)
 
-model_name = 'SAKT'
+model_name = 'BiMamba'
 
 if model_name == "DKT":
     model = DKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
@@ -44,7 +45,7 @@ elif model_name == "testKT":
 
 elif model_name == "SAKT":
     model = SAKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
-                    output_dim=C.OUTPUT).to(device)
+                 output_dim=C.OUTPUT).to(device)
 
 elif model_name == "DKT-cont":
     model = DKTcont(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
@@ -54,6 +55,10 @@ elif model_name == "Mamba":
     model = Mamba4KT(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
                      dropout_prob=C.DROP_PRO, d_state=C.d_state, d_conv=C.d_conv,
                      expand=C.expand).to(device)
+
+elif model_name == "BiMamba":
+    model = BiMamba4KT(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
+                       dropout_prob=C.DROP_PRO, d_state=C.d_state,).to(device)
 
 elif model_name == "Mamba-cont":
     model = MambaCont(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
