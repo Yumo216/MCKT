@@ -4,16 +4,16 @@ import torch
 from KnowledgeTracing.Constant import Constants as C
 
 json_file_path = '../../KTDataset/assist2017/AS17_diff.json'
-with open(json_file_path, 'r') as json_file:
-    question_difficulty = json.load(json_file)
+
 
 class testKT(nn.Module):
     def __init__(self, emb_dim, hidden_dim, layer_dim, output_dim):
         super(testKT, self).__init__()
+        with open(json_file_path, 'r') as json_file:
+            self.question_difficulty = json.load(json_file)
 
         self.qa_emb = nn.Embedding(2 * C.QUES + 1, emb_dim)
         self.q_emb = nn.Embedding(C.QUES + 1, emb_dim)
-        self.question_difficulty = question_difficulty
 
 
         self.output_dim = output_dim
