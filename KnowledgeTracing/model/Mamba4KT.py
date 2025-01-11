@@ -37,8 +37,8 @@ class Mamba4KT(nn.Module):
     def forward(self, x, _):  # shape of input: [batch_size, length, 2q ]
 
         item_emb = self.interaction_emb(x)
-        item_emb = self.dropout(item_emb)
-        item_emb = self.LayerNorm(item_emb)
+        # item_emb = self.dropout(item_emb)  # 降低性能的罪魁祸首
+        # item_emb = self.LayerNorm(item_emb)
 
         for i in range(self.num_layers):
             item_emb = self.mamba_layers[i](item_emb)
@@ -59,14 +59,7 @@ class MambaLayer(nn.Module):
             d_conv=d_conv,
             expand=expand,
         )
-        # self.Bimamba = BiMamba(
-        #     # This module uses roughly 3 * expand * d_model^2 parameters
-        #     d_model=d_model,
-        #     bimamba_type='v2'
-        #     # d_state=d_state,
-        #     # d_conv=d_conv,
-        #     # expand=expand,
-        # )
+
 
 
         self.dropout = nn.Dropout(dropout)

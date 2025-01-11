@@ -14,7 +14,7 @@ skill = {
     'XES3G5M': 865,
 }
 
-DATASET = datasets['2017']
+DATASET = datasets['XES']
 QUES = question[DATASET]
 
 # Dataloader
@@ -39,4 +39,4 @@ expand = 2
 
 # Training
 LR = 0.001
-EPOCH = 50
+EPOCH = 100

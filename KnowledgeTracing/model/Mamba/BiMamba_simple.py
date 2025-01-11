@@ -42,11 +42,3 @@ class BiMambaEncoder(nn.Module):
 
         output = ff_out + residual
         return output
-
-# # Initialize and test the model
-# d_model = 512
-# n_state = 64
-# model = BiMambaEncoder(d_model, n_state).cuda()
-# x = torch.rand(32, 100, d_model).cuda()  # Analog input data: (batch_size, seq_len, feature_dim)
-# output = model(x)
-# print(output.shape)  # Mamba Out: (32, 100, 512)

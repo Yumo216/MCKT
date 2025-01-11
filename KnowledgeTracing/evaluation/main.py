@@ -79,7 +79,7 @@ best_auc = 0.0
 best_epoch = 0
 best_acc = 0.0
 
-patience = 16
+patience = 6
 counter = 0
 
 optimizer = optim.Adam(model.parameters(), lr=C.LR)

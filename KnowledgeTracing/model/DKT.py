@@ -10,7 +10,7 @@ class DKT(nn.Module):
         self.interaction_emb = nn.Embedding(2 * C.QUES + 1, emb_dim)
 
         self.output_dim = output_dim
-        self.gru = nn.RNN(emb_dim, hidden_dim, layer_dim, batch_first=True)
+        self.gru = nn.GRU(emb_dim, hidden_dim, layer_dim, batch_first=True)
 
         self.fc = nn.Linear(hidden_dim, self.output_dim)
         self.predict_linear = nn.Linear(hidden_dim, C.QUES, bias=True)
