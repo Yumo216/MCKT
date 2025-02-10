@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/DKT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/DKT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/BiMamba.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiSSMs/BiMamba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/BiMamba_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/BiMamba_simple.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/TestMamba.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiSSMs/TestMamba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/selective_scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiSSMs/selective_scan.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba4KT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +235,8 @@
       <workItem from="1734054060838" duration="9046000" />
       <workItem from="1734358213639" duration="18661000" />
       <workItem from="1736129604470" duration="3799000" />
-      <workItem from="1736168123116" duration="3434000" />
+      <workItem from="1736168123116" duration="4025000" />
+      <workItem from="1738987065641" duration="598000" />
     </task>
     <servers />
   </component>
