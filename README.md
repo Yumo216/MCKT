@@ -1,20 +1,14 @@
-# MCKT: A Mamba Model for Content-Aware Knowledge Tracing
+# MCKT: A Parallel Mamba-based Model for Content-Aware Knowledge Tracing
 
-The implementation of the paper *MCKT: A Mamba Model for Content-Aware Knowledge Tracing.*
+The implementation of the paper *MCKT: A Parallel Mamba-based Model for Content-Aware Knowledge Tracing.*
 
 ## Abstract
-Knowledge tracing (KT) is a critical task in educational data mining, essential for accurately modeling and predicting student learning progress. However, existing KT models often overlook the rich textual information embedded in exercises, which is crucial for understanding the context and content of student interactions. To address this gap, we propose MCKT, a novel model that introduces a Content Encoder specifically designed to capture and integrate textual information from educational exercises. Additionally, given the extended sequence lengths typical in real-world KT scenarios, traditional sequence modeling approaches like RNNs and Transformers face limitations, including issues with long-term dependency modeling and computational inefficiency. To overcome these challenges, we incorporate the Mamba module into our model, leveraging its state space modeling capabilities to more effectively handle long sequences with greater efficiency. Extensive experiments on both traditional and content-based datasets demonstrate that MCKT significantly outperforms state-of-the-art models, providing more accurate and context-aware predictions of student performance.
+Knowledge tracing (KT) aims to model students’ evolving mastery of concepts, forming a cornerstone of intelligent tutoring systems and adaptive learning technologies. Despite recent advances, many existing KT models primarily rely on explicit exercise attributes, overlooking the rich contextual cues hidden in exercise content, including implicit textual information and cognitive difficulty, which limits both predictive performance and interpretability. Moreover, effectively capturing long-term dependencies in student learning trajectories remains a challenge, especially in the presence of long or irregular interaction sequences. To address these challenges, we propose MCKT, a novel parallel Mamba-based knowledge tracing model that jointly models the semantic structure of exercise texts and the dynamic complexity of difficulty levels. Specifically, MCKT incorporates a pre-trained language model to extract fine-grained semantic features from exercises. To model both student responses and perceived difficulty sequences, MCKT employs two parallel sequence encoders, each built upon the Mamba architecture, to efficiently model the temporal dynamics of student responses and perceived difficulty sequences. Furthermore, to improve generalization for students with sparse learning records, which are common in practical long-tail scenarios, we introduce an adaptive enhancement module that better captures short sequence patterns. Extensive experiments on benchmark datasets show that MCKT achieves consistent gains in predictive performance and robustness, supported by Mamba’s capability to efficiently capture long-range dependencies in student learning trajectories. This content-aware design enhances interpretability by mapping learning behaviors to meaningful textual and cognitive aspects of exercises, enabling more transparent and adaptive educational support.
 
 ## Overall Architecture
-*<img width="1480" alt="model structure_1" src="https://github.com/user-attachments/assets/c437c0e4-1342-4a50-9ef5-6e05afd9c48f">*
+<img width="1710" alt="model structure_1" src="https://github.com/user-attachments/assets/722011b4-dd4a-4bcc-8be5-619ae7d901db" />
 
-## Models
 
-- `/KnowledgeTracing/model/Model.py`: Multiple models; selection in `main.py`.
-- `/KnowledgeTracing/data/`: Reading and processing datasets.
-- `/KnowledgeTracing/evaluation/eval.py`: Calculate losses and performance.
-
-## Setup
 
 ### Requirements
 
@@ -30,11 +24,12 @@ To install `causal Conv1d` and the core `Mamba` package, run:
 pip install causal-conv1d>=1.2.0
 pip install mamba-ssm
 ```
+If you encounter any issues during the installation of **Mamba**, please refer to the following GitHub discussion for possible solutions:
+
+👉 [state-spaces/mamba#169](https://github.com/state-spaces/mamba/issues/169)
 
 ### Run
 ```bash
 run main.py
 ```
 
-## Future Release
-More details will be released shortly.

@@ -1,7 +1,6 @@
 import sys
+from datetime import datetime
 from KnowledgeTracing.model.DKT import DKT
-from KnowledgeTracing.model.SAKT import SAKT
-from KnowledgeTracing.model.storm import testKT
 from KnowledgeTracing.model.DKTcont import DKTcont
 from KnowledgeTracing.model.Mamba4KT import Mamba4KT
 from KnowledgeTracing.model.BiMamba4KT import BiMamba4KT
@@ -28,37 +27,23 @@ torch.manual_seed(SEED)
 torch.cuda.manual_seed(SEED)
 np.random.seed(SEED)
 
+timestamp = datetime.now().strftime("%Y%m%d_%H")
+
 with open('../../KTDataset/XES3G5M/cid2content_emb.json', 'r', encoding='utf-8') as f:
     qid2cont = (json.load(f))  # dict [Q, 768]
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)
 
-model_name = 'BiMamba'
+model_name = 'Mamba'
 
-if model_name == "DKT":
-    model = DKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
-                output_dim=C.OUTPUT).to(device)
-
-elif model_name == "testKT":
-    model = testKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
-                    output_dim=C.OUTPUT).to(device)
-
-elif model_name == "SAKT":
-    model = SAKT(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
-                 output_dim=C.OUTPUT).to(device)
-
-elif model_name == "DKT-cont":
-    model = DKTcont(emb_dim=C.EMB_DIM, hidden_dim=C.HIDDEN, layer_dim=C.RNN_LAYERS,
-                    output_dim=C.OUTPUT, ques_cont=ques_cont).to(device)
-
-elif model_name == "Mamba":
+if model_name == "Mamba":
     model = Mamba4KT(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
                      dropout_prob=C.DROP_PRO, d_state=C.d_state, d_conv=C.d_conv,
                      expand=C.expand).to(device)
 
 elif model_name == "BiMamba":
     model = BiMamba4KT(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
-                       dropout_prob=C.DROP_PRO, d_state=C.d_state,).to(device)
+                       dropout_prob=C.DROP_PRO, d_state=C.d_state).to(device)
 
 elif model_name == "Mamba-cont":
     model = MambaCont(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
@@ -68,10 +53,10 @@ elif model_name == "Mamba-cont":
 else:
     raise ValueError(f"Unknown model name: {model_name}")
 
+save_path = f'results/best_model_{model_name}_{timestamp}.pth'
 optimizer = optim.Adam(model.parameters(), lr=C.LR)
 
 loss_func = eval.lossFunc(C.MAX_STEP, device).to(device)
-
 
 trainLoader, validationLoader, testLoader = getDataLoader(C.BATCH_SIZE, C.QUES, C.MAX_STEP)
 
@@ -95,10 +80,21 @@ for epoch in range(C.EPOCH):
             best_acc = acc
             best_epoch = epoch + 1
             counter = 0
+            # save best model
+            torch.save(model.state_dict(), save_path)
         else:
             counter += 1
+
     print('Best auc at present: %f  acc:  %f  Best epoch: %d' % (best_auc, best_acc, best_epoch))
     if counter >= patience:
         print(f"Early stopping triggered. No improvement in AUC for {patience} consecutive epochs.")
         print(f'Final Best AUC: {best_auc * 100:.2f}%  ACC: {best_acc * 100:.2f}%  Best epoch: {best_epoch}')
         break
+
+# 载入最优模型并在测试集上评估
+print("Training finished. Evaluating on test set using the best model...")
+print(f"Loaded model from: {save_path}")
+
+with torch.no_grad():
+    test_auc, test_acc = eval.test_epoch(model, testLoader, loss_func, device)
+    print(f"[Test Result] AUC: {test_auc * 100:.2f}%  ACC: {test_acc * 100:.2f}%")

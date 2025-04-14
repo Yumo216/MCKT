@@ -14,7 +14,7 @@ skill = {
     'XES3G5M': 865,
 }
 
-DATASET = datasets['XES']
+DATASET = datasets['2017']
 QUES = question[DATASET]
 
 # Dataloader

@@ -2,12 +2,6 @@ import torch.nn as nn
 from KnowledgeTracing.Constant import Constants as C
 import torch.nn.functional as F
 
-    # -*- coding: utf-8 -*-
-"""
-Created on Sat Mar 27 07:43:41 2021
-
-@author: lpott
-"""
 class DilatedResBlock(nn.Module):
     def __init__(self, dilation, channel, max_len):
         super(DilatedResBlock, self).__init__()
@@ -19,11 +13,7 @@ class DilatedResBlock(nn.Module):
         self.reduce = nn.Conv1d(channel, self.half_channel, 1)
         self.masked = nn.Conv1d(self.half_channel, self.half_channel, 3, dilation=dilation)
         self.increase = nn.Conv1d(self.half_channel, channel, 1)
-        """
-        self.reduce_norm = nn.LayerNorm(normalized_shape=[max_len])#channel)
-        self.masked_norm = nn.LayerNorm(normalized_shape=[max_len])#self.half_channel)
-        self.increase_norm = nn.LayerNorm(normalized_shape=[max_len])#self.half_channel)
-        """
+
         self.reduce_norm = nn.LayerNorm(normalized_shape=channel)
         self.masked_norm = nn.LayerNorm(normalized_shape=self.half_channel)
         self.increase_norm = nn.LayerNorm(normalized_shape=self.half_channel)

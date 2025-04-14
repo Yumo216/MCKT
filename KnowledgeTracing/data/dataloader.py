@@ -1,11 +1,8 @@
 import sys
 
 sys.path.append('../')
-import numpy as np
-import torch.utils.data as Data
 import torch
 import torch.utils.data as Data
-from .readdata import DataReader
 from KnowledgeTracing.Constant import Constants as C
 from KnowledgeTracing.data.readdata import DataReader
 
