@@ -7,6 +7,7 @@ Knowledge tracing (KT) aims to model students’ evolving mastery of concepts, f
 
 ## Overall Architecture
 *<img width="1480" alt="model structure_1" src="https://github.com/user-attachments/assets/c437c0e4-1342-4a50-9ef5-6e05afd9c48f">*
+[model structure.pdf](https://github.com/user-attachments/files/19728385/model.structure.pdf)
 
 ## Models
 
