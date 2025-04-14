@@ -1,4 +1,4 @@
-# MCKT: A Mamba Model for Content-Aware Knowledge Tracing
+# MCKT: A Parallel Mamba-based Model for Content-Aware Knowledge Tracing
 
 The implementation of the paper *MCKT: A Parallel Mamba-based Model for Content-Aware Knowledge Tracing.*
 
@@ -9,13 +9,6 @@ Knowledge tracing (KT) aims to model students’ evolving mastery of concepts, f
 <img width="1710" alt="model structure_1" src="https://github.com/user-attachments/assets/722011b4-dd4a-4bcc-8be5-619ae7d901db" />
 
 
-## Models
-
-- `/KnowledgeTracing/model/Model.py`: Multiple models; selection in `main.py`.
-- `/KnowledgeTracing/data/`: Reading and processing datasets.
-- `/KnowledgeTracing/evaluation/eval.py`: Calculate losses and performance.
-
-## Setup
 
 ### Requirements
 
@@ -31,11 +24,12 @@ To install `causal Conv1d` and the core `Mamba` package, run:
 pip install causal-conv1d>=1.2.0
 pip install mamba-ssm
 ```
+If you encounter any issues during the installation of **Mamba**, please refer to the following GitHub discussion for possible solutions:
+
+👉 [state-spaces/mamba#169](https://github.com/state-spaces/mamba/issues/169)
 
 ### Run
 ```bash
 run main.py
 ```
 
-## Future Release
-More details will be released shortly.
