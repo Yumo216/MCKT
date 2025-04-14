@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/difficulty stac.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/XES3G5M/difficulty stac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" afterDir="false" />
-    </list>
+    <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +268,7 @@
       <workItem from="1742876878257" duration="53000" />
       <workItem from="1744595199009" duration="1967000" />
       <workItem from="1744615115062" duration="5092000" />
-      <workItem from="1744627310562" duration="8139000" />
+      <workItem from="1744627310562" duration="8451000" />
     </task>
     <servers />
   </component>
