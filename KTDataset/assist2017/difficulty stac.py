@@ -2,7 +2,7 @@ import itertools
 from collections import defaultdict
 import json
 # 文件路径
-data_file = 'assist2017_pid_train.csv'
+data_file = '../assist2017/assist2017_pid_train.csv'
 
 # 存储题目和回答正确率
 question_correct = defaultdict(int)
@@ -33,7 +33,7 @@ def calculate_difficulty(data_file):
 # 调用函数并保存结果到 JSON 文件
 question_accuracy = calculate_difficulty(data_file)
 
-with open('AS17_diff.json', 'w') as json_file:
+with open('XES_diff.json', 'w') as json_file:
     json.dump(question_accuracy, json_file, indent=4)
 
 # 打印结果

@@ -70,6 +70,5 @@ def process_knowledge_tracing_csv(file_path):
 file_path = './train_valid_sequences_quelevel.csv'
 output_file_path = process_knowledge_tracing_csv(file_path)
 
-output_file_path
 
 

@@ -1,7 +1,5 @@
 import sys
 from datetime import datetime
-from KnowledgeTracing.model.DKT import DKT
-from KnowledgeTracing.model.DKTcont import DKTcont
 from KnowledgeTracing.model.Mamba4KT import Mamba4KT
 from KnowledgeTracing.model.BiMamba4KT import BiMamba4KT
 from KnowledgeTracing.model.MambaCont import MambaCont
@@ -29,12 +27,13 @@ np.random.seed(SEED)
 
 timestamp = datetime.now().strftime("%Y%m%d_%H")
 
-with open('../../KTDataset/XES3G5M/cid2content_emb.json', 'r', encoding='utf-8') as f:
+#
+with open('../../KTDataset/XES3G5M/qid2content_emb.json', 'r', encoding='utf-8') as f:
     qid2cont = (json.load(f))  # dict [Q, 768]
 
 ques_cont = torch.tensor([qid2cont[str(i)] for i in range(len(qid2cont))]).to(device)
 
-model_name = 'Mamba'
+model_name = 'BiMamba'
 
 if model_name == "Mamba":
     model = Mamba4KT(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
@@ -45,15 +44,14 @@ elif model_name == "BiMamba":
     model = BiMamba4KT(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
                        dropout_prob=C.DROP_PRO, d_state=C.d_state).to(device)
 
-elif model_name == "Mamba-cont":
+elif model_name == "BiMamba-cont":
     model = MambaCont(emb_dim=C.EMB_DIM, input_size=C.EMB_DIM, num_layers=C.MAM_LAYERS,
-                      dropout_prob=C.DROP_PRO, d_state=C.d_state, d_conv=C.d_conv,
-                      expand=C.expand, ques_cont=ques_cont).to(device)
+                      dropout_prob=C.DROP_PRO, d_state=C.d_state, ques_cont=ques_cont).to(device)
 
 else:
     raise ValueError(f"Unknown model name: {model_name}")
 
-save_path = f'results/best_model_{model_name}_{timestamp}.pth'
+save_path = f'../saved/{C.DATASET}_{model_name}_{timestamp}.pth'
 optimizer = optim.Adam(model.parameters(), lr=C.LR)
 
 loss_func = eval.lossFunc(C.MAX_STEP, device).to(device)
@@ -69,6 +67,7 @@ counter = 0
 
 optimizer = optim.Adam(model.parameters(), lr=C.LR)
 best_auc = 0
+
 for epoch in range(C.EPOCH):
     print(f"Current model: {model_name}    Using GPU: {device_id}")
     print('epoch: ' + str(epoch + 1))
@@ -91,10 +90,11 @@ for epoch in range(C.EPOCH):
         print(f'Final Best AUC: {best_auc * 100:.2f}%  ACC: {best_acc * 100:.2f}%  Best epoch: {best_epoch}')
         break
 
-# 载入最优模型并在测试集上评估
+
 print("Training finished. Evaluating on test set using the best model...")
 print(f"Loaded model from: {save_path}")
 
+model.eval()
 with torch.no_grad():
     test_auc, test_acc = eval.test_epoch(model, testLoader, loss_func, device)
     print(f"[Test Result] AUC: {test_auc * 100:.2f}%  ACC: {test_acc * 100:.2f}%")

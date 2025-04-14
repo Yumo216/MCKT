@@ -31,16 +31,12 @@ class DilatedResBlock(nn.Module):
         y = self.masked(y)
 
         y = self.increase_norm(y.permute(0, 2, 1)).permute(0, 2, 1)
-        # y = self.increase_norm(y)
         y = F.leaky_relu(y)
         y = self.increase(y)
 
         return x + y
 
 class AdptiveGRU(nn.Module):
-    """
-
-    """
 
     def __init__(self, emb_dim, output_dim, layer_dim=2):
 

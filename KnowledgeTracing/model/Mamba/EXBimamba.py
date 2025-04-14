@@ -25,20 +25,12 @@ class ExBimamba(nn.Module):
         self.d_state = d_state
         self.d_conv = d_conv
         self.expand = expand
-        self.forward_mamba = Mamba(d_model=self.d_model, d_state=self.d_state, d_conv=self.d_conv, expand=self.expand)
-        self.backward_mamba = Mamba(d_model=self.d_model, d_state=self.d_state, d_conv=self.d_conv, expand=self.expand)
-        self.output_proj = nn.Linear(2 * self.d_model, self.d_model)
+        self.hidd_mamba = Mamba(d_model=self.d_model, d_state=self.d_state, d_conv=self.d_conv, expand=self.expand)
+        self.diff_mamba = Mamba(d_model=self.d_model, d_state=self.d_state, d_conv=self.d_conv, expand=self.expand)
+        # self.output_proj = nn.Linear(2 * self.d_model, self.d_model)
 
+    def forward(self, hidden, diff):
+        hidden_out = self.hidd_mamba(hidden)  # [B, L, d_model]
+        diff_out = self.diff_mamba(diff)  # [B, L, d_model]
 
-
-    def forward(self, hidden_input, diff):
-
-        # hidden_input_flip = hidden_input.flip([1])
-
-        forward_output = self.forward_mamba(hidden_input)
-
-        # backward_output = self.backward_mamba(hidden_input_flip)
-        backward_output = self.backward_mamba(hidden_input)
-        res = torch.cat((forward_output, backward_output.flip([1])), dim=-1)
-        res = self.output_proj(res)
-        return res
+        return hidden_out, diff_out

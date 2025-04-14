@@ -1,5 +1,4 @@
 import sys
-
 sys.path.append('../')
 import torch
 import torch.utils.data as Data
@@ -23,7 +22,7 @@ def getDataLoader(batch_size, num_of_questions, max_step):
 
 
 def getDatasetPaths(dataset):
-    if dataset == 'assist2017':
+    if dataset == 'ASSIST17':
         trainPath = C.Dpath + '/assist2017/assist2017_pid_train.csv'
         testPath = C.Dpath + '/assist2017/assist2017_pid_test.csv'
 

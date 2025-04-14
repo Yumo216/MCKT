@@ -1,4 +1,3 @@
-# from KnowledgeTracing.model.Mamba.BiMamba import BiMamba
 from mamba_ssm import Mamba
 import torch.nn as nn
 from KnowledgeTracing.Constant import Constants as C

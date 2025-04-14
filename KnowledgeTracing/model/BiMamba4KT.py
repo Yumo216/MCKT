@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import json
-from mamba_ssm import Mamba
 from KnowledgeTracing.Constant import Constants as C
 from .Mamba.EXBimamba import ExBimamba
 from .AdptiveGRU import AdptiveGRU
@@ -36,33 +35,31 @@ class BiMamba4KT(nn.Module):
         ])
         self.fc = nn.Linear(self.input_size, C.QUES)
 
-        # AdptiveGRU
         self.gru = AdptiveGRU(emb_dim=C.EMB_DIM, output_dim=C.EMB_DIM)
         self.mix = MixingLayer(emb_dim)
 
     def forward(self, qa, q):  # shape of input: [batch_size, length]
         q_emb = self.q_emb(q)
-
         qa_emb = self.qa_emb(qa)
-        qa_emb = self.dropout(qa_emb)
-        qa_emb = self.LayerNorm(qa_emb)
+        # qa_emb = self.dropout(qa_emb)
+        # qa_emb = self.LayerNorm(qa_emb)
 
-        # 获取每个题目的难度
+        '''Rasch diff'''
         difficulty = torch.tensor([self.question_difficulty.get(str(int(q_id)), 0.5) for q_id in q.view(-1)],
                                   dtype=torch.float32)
-        q_diff = difficulty.view(q.size(0), q.size(1), 1).to(q_emb.device)  # 调整维度与 q_emb 匹配
+        q_diff = difficulty.view(q.size(0), q.size(1), 1).to(q_emb.device)
         q_diff_emb = (1 - q_diff) * q_emb
 
-        # 结合 Rasch 模型：qa 作为学生能力，1-difficulty 作为题目难度
-        # com_emb = qa_emb - (1-q_diff_emb) * q_emb  # [bs, L, emb_dim]
-        # item_emb = torch.zeros_like(qa_emb)
+        '''AdptiveGRU'''
+        logit_gru = self.gru(qa_emb)  # [bs, L, emb_dim]
+
+        '''Parallel Mamba'''
         for i in range(self.num_layers):
-            item_emb = self.mamba_layers[i](qa_emb, q_diff_emb)  # [bs, L, emb_dim]
+            logit_hidd, logit_diff = self.mamba_layers[i](qa_emb, q_diff_emb)  # [bs, L, emb_dim]
 
-        # logit_gru = self.gru(qa_emb)  # [bs, L, emb_dim]
-        # logit = self.mix(item_emb)
+        logit = self.mix(logit_hidd, logit_diff, logit_gru)
 
-        logit = self.fc(item_emb)
+        logit = self.fc(logit)  # [BS,L,emb_dim(256)-q]
 
         return logit
 
@@ -73,7 +70,6 @@ class MambaLayer(nn.Module):
         self.num_layers = num_layers
 
         # Use BiMamba
-        # self.bimamba = BiMambaEncoder(d_model=d_model, d_state=d_state)
         self.bimamba = ExBimamba(d_model=d_model, d_state=d_state)
 
         self.dropout = nn.Dropout(dropout)
@@ -82,34 +78,43 @@ class MambaLayer(nn.Module):
 
     def forward(self, input_tensor, q_diff_emb):
         # Use BiMambaEncoder for modeling
-        hidden_states = self.bimamba(input_tensor, q_diff_emb)
+        hidd_out, diff_out = self.bimamba(input_tensor, q_diff_emb)
         if self.num_layers == 1:  # one layer without residual connection
-            hidden_states = self.LayerNorm(self.dropout(hidden_states))
+            hidd_out = self.LayerNorm(self.dropout(hidd_out))
+            diff_out = self.LayerNorm(self.dropout(diff_out))
         else:  # stacked layers with residual connections
-            hidden_states = self.LayerNorm(self.dropout(hidden_states) + input_tensor)
-        hidden_states = self.ffn(hidden_states)
-        return hidden_states
+            hidd_out = self.LayerNorm(self.dropout(hidd_out) + input_tensor)
+            diff_out = self.LayerNorm(self.dropout(diff_out) + q_diff_emb)
+        hidd_out = self.ffn(hidd_out)
+        diff_out = self.ffn(diff_out)
+        return hidd_out, diff_out
 
 
 class MixingLayer(nn.Module):
     def __init__(self, emb_dim):
         super(MixingLayer, self).__init__()
-        # 定义可学习参数 a1 和 a2
-        self.a1 = nn.Parameter(torch.tensor(0.5))  # 初始化为 0.5，可学习
-        self.a2 = nn.Parameter(torch.tensor(0.5))  # 初始化为 0.5，可学习
-        # 定义线性变换层 W 和 b
+        # Learnable weights for fusion
+        self.a1 = nn.Parameter(torch.tensor(0.33))  # for mamba_hidden
+        self.a2 = nn.Parameter(torch.tensor(0.33))  # for mamba_diff
+        self.a3 = nn.Parameter(torch.tensor(0.33))  # for adaptive_gru
+
+        # Optional transformation layer
         self.linear = nn.Linear(emb_dim, emb_dim, bias=True)
 
-    def forward(self, m_output, g_output):
+    def forward(self, hidd_out, diff_out, gru_out):
         """
-        :param m_output: [batch_size, L, D] 来自 Mamba 的输出
-        :param f_output: [batch_size, L, D] 来自 GRU 的输出
-        :return: [batch_size, L, D] 融合后的表示
+        Inputs:
+            hidd_out: [batch_size, L, D] - from Mamba (response stream)
+            diff_out: [batch_size, L, D] - from Mamba (difficulty stream)
+            gru_out: [batch_size, L, D] - from AdaptiveGRU
+        Returns:
+            fused representation: [batch_size, L, D]
         """
-        # 加权求和
-        z0 = self.a1 * m_output + self.a2 * g_output  # [batch_size, L, D]
-        # 线性变换
-        z_hat = self.linear(z0)  # [batch_size, L, D]
+        # Weighted sum of the three branches
+        z0 = self.a1 * hidd_out + self.a2 * diff_out + self.a3 * gru_out  # [B, L, D]
+
+        # Linear transformation
+        z_hat = self.linear(z0)  # [B, L, D]
         return z_hat
 
 

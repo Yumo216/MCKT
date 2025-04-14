@@ -43,7 +43,7 @@ class DataReader():
     def getTrainData(self):
         print('loading train data...')
         Data = np.array(self.getData(self.train_path))
-        trainData, valiData = train_test_split(Data, test_size=0.2, random_state=3)
+        trainData, valiData = train_test_split(Data, test_size=0.1, random_state=3)
         return np.array(trainData), np.array(valiData)
 
 

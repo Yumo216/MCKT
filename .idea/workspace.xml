@@ -6,10 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/cid2content_emb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/copy_test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/copy_train_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/original_test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/original_train_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/satistics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/special_for_train_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/XES3G5M/special_for_train_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/test_quelevel.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/Rasch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/data/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/data/dataloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/data/readdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/data/readdata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/AdptiveGRU.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/AdptiveGRU.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/EXBimamba.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/EXBimamba.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba4KT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/mamba code/BiMamba_simple.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,28 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/yumo/Documents/GitHub/MCKT/store/mamba code&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/yumo/Documents/GitHub/MCKT/KTDataset/XES3G5M",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/KTDataset/XES3G5M" />
       <recent name="$PROJECT_DIR$/store/mamba code" />
       <recent name="$PROJECT_DIR$/KnowledgeTracing/model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/KTDataset/XES3G5M" />
       <recent name="$PROJECT_DIR$/KnowledgeTracing/model/BiSSMs" />
       <recent name="$PROJECT_DIR$/KnowledgeTracing/model/Mamba" />
     </key>
@@ -81,6 +98,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KnowledgeTracing/model/AdptiveGRU.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MambaCont" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MCKT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/KnowledgeTracing/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,6 +246,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.MambaCont" />
       <item itemvalue="Python.AdptiveGRU" />
       <item itemvalue="Python.selective_scan" />
       <item itemvalue="Python.difficulty stac" />
@@ -214,9 +254,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MambaCont" />
+        <item itemvalue="Python.difficulty stac" />
         <item itemvalue="Python.AdptiveGRU" />
         <item itemvalue="Python.tst" />
-        <item itemvalue="Python.difficulty stac" />
       </list>
     </recent_temporary>
   </component>
@@ -247,6 +288,8 @@
       <workItem from="1741746639437" duration="3077000" />
       <workItem from="1742876878257" duration="53000" />
       <workItem from="1744595199009" duration="1967000" />
+      <workItem from="1744615115062" duration="5092000" />
+      <workItem from="1744627310562" duration="6938000" />
     </task>
     <servers />
   </component>
@@ -268,42 +311,23 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/KnowledgeTracing/model/storm.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/KnowledgeTracing/model/SAKT.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="23" />
+          <line>47</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MCKT$main.coverage" NAME="main Coverage Results" MODIFIED="1740122174390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/evaluation" />
+    <SUITE FILE_PATH="coverage/MCKT$main.coverage" NAME="main Coverage Results" MODIFIED="1744633781384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/evaluation" />
     <SUITE FILE_PATH="coverage/MCKT$AdptiveGRU.coverage" NAME="AdptiveGRU Coverage Results" MODIFIED="1733449123062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/model" />
-    <SUITE FILE_PATH="coverage/MCKT$difficulty_stac.coverage" NAME="difficulty stac Coverage Results" MODIFIED="1730877041753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KTDataset/assist2017" />
+    <SUITE FILE_PATH="coverage/MCKT$difficulty_stac.coverage" NAME="difficulty stac Coverage Results" MODIFIED="1744629575254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KTDataset/assist2017" />
+    <SUITE FILE_PATH="coverage/MCKT$MambaCont.coverage" NAME="MambaCont Coverage Results" MODIFIED="1744629581673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/model" />
     <SUITE FILE_PATH="coverage/MCKT$Constants.coverage" NAME="Constants Coverage Results" MODIFIED="1724055809906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/Constant" />
     <SUITE FILE_PATH="coverage/MCKT$tst.coverage" NAME="tst Coverage Results" MODIFIED="1733386470500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MCKT$statistic.coverage" NAME="statistic Coverage Results" MODIFIED="1730452112744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KTDataset/assist2017" />
