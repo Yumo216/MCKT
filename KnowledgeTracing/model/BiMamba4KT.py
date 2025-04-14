@@ -41,8 +41,8 @@ class BiMamba4KT(nn.Module):
     def forward(self, qa, q):  # shape of input: [batch_size, length]
         q_emb = self.q_emb(q)
         qa_emb = self.qa_emb(qa)
-        # qa_emb = self.dropout(qa_emb)
-        # qa_emb = self.LayerNorm(qa_emb)
+        qa_emb = self.dropout(qa_emb)
+        qa_emb = self.LayerNorm(qa_emb)
 
         '''Rasch diff'''
         difficulty = torch.tensor([self.question_difficulty.get(str(int(q_id)), 0.5) for q_id in q.view(-1)],

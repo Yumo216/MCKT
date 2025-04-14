@@ -6,25 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/cid2content_emb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/copy_test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/copy_train_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/original_test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/original_train_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/satistics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/special_for_train_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/XES3G5M/special_for_train_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/test_quelevel.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KTDataset/XES3G5M/difficulty stac.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/XES3G5M/difficulty stac.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" beforeDir="false" afterPath="$PROJECT_DIR$/KTDataset/assist2017/difficulty stac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/Rasch.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/data/dataloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/data/dataloader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/data/readdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/data/readdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/AdptiveGRU.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/AdptiveGRU.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/EXBimamba.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba/EXBimamba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/Mamba4KT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +273,7 @@
       <workItem from="1742876878257" duration="53000" />
       <workItem from="1744595199009" duration="1967000" />
       <workItem from="1744615115062" duration="5092000" />
-      <workItem from="1744627310562" duration="6938000" />
+      <workItem from="1744627310562" duration="8139000" />
     </task>
     <servers />
   </component>
@@ -324,7 +308,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MCKT$main.coverage" NAME="main Coverage Results" MODIFIED="1744633781384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/evaluation" />
+    <SUITE FILE_PATH="coverage/MCKT$main.coverage" NAME="main Coverage Results" MODIFIED="1744634625332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/evaluation" />
     <SUITE FILE_PATH="coverage/MCKT$AdptiveGRU.coverage" NAME="AdptiveGRU Coverage Results" MODIFIED="1733449123062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/model" />
     <SUITE FILE_PATH="coverage/MCKT$difficulty_stac.coverage" NAME="difficulty stac Coverage Results" MODIFIED="1744629575254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KTDataset/assist2017" />
     <SUITE FILE_PATH="coverage/MCKT$MambaCont.coverage" NAME="MambaCont Coverage Results" MODIFIED="1744629581673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KnowledgeTracing/model" />
