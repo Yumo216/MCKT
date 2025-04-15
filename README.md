@@ -10,7 +10,7 @@ Knowledge tracing (KT) aims to model students’ evolving mastery of concepts, f
 
 
 ## Datasets
-e evaluate our models on six benchmark datasets for knowledge tracing, as mentioned in the paper. All datasets are available in the Google Drive, which can be accessed via the following link:
+Evaluate our models on six benchmark datasets for knowledge tracing, as mentioned in the paper. All datasets are available in the Google Drive, which can be accessed via the following link:
 
  [Google Drive](https://drive.google.com/drive/folders/15rkZiXMr6IBoJr_15v5Rh82gKS6P1r45?usp=drive_link)
 
