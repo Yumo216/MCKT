@@ -1,0 +1,226 @@
+[2025-04-15 11:23:34,903] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:23:34,903] INFO: Epoch: 1/100
+[2025-04-15 11:23:51,809] INFO: New best AUC: 0.5887, ACC: 0.5904 at epoch 1 (model saved).
+[2025-04-15 11:23:51,809] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:23:51,809] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:23:51,809] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:23:51,809] INFO: Epoch: 2/100
+[2025-04-15 11:24:08,117] INFO: New best AUC: 0.6301, ACC: 0.6291 at epoch 2 (model saved).
+[2025-04-15 11:24:08,117] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:24:08,117] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:24:08,117] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:24:08,117] INFO: Epoch: 3/100
+[2025-04-15 11:24:24,567] INFO: New best AUC: 0.6550, ACC: 0.6502 at epoch 3 (model saved).
+[2025-04-15 11:24:24,568] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:24:24,568] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:24:24,568] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:24:24,568] INFO: Epoch: 4/100
+[2025-04-15 11:24:40,938] INFO: New best AUC: 0.6730, ACC: 0.6616 at epoch 4 (model saved).
+[2025-04-15 11:24:40,938] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:24:40,939] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:24:40,939] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:24:40,939] INFO: Epoch: 5/100
+[2025-04-15 11:24:57,396] INFO: New best AUC: 0.6844, ACC: 0.6663 at epoch 5 (model saved).
+[2025-04-15 11:24:57,396] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:24:57,396] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:24:57,397] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:24:57,397] INFO: Epoch: 6/100
+[2025-04-15 11:25:13,748] INFO: New best AUC: 0.6894, ACC: 0.6692 at epoch 6 (model saved).
+[2025-04-15 11:25:13,748] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:25:13,749] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:25:13,749] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:25:13,749] INFO: Epoch: 7/100
+[2025-04-15 11:25:30,308] INFO: New best AUC: 0.6939, ACC: 0.6722 at epoch 7 (model saved).
+[2025-04-15 11:25:30,308] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:25:30,308] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:25:30,308] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:25:30,308] INFO: Epoch: 8/100
+[2025-04-15 11:25:46,871] INFO: New best AUC: 0.6980, ACC: 0.6739 at epoch 8 (model saved).
+[2025-04-15 11:25:46,872] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:25:46,872] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:25:46,872] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:25:46,872] INFO: Epoch: 9/100
+[2025-04-15 11:26:03,254] INFO: New best AUC: 0.7030, ACC: 0.6750 at epoch 9 (model saved).
+[2025-04-15 11:26:03,254] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:26:03,254] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:26:03,254] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:26:03,254] INFO: Epoch: 10/100
+[2025-04-15 11:26:19,739] INFO: New best AUC: 0.7083, ACC: 0.6771 at epoch 10 (model saved).
+[2025-04-15 11:26:19,739] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:26:19,739] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:26:19,740] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:26:19,740] INFO: Epoch: 11/100
+[2025-04-15 11:26:36,039] INFO: New best AUC: 0.7144, ACC: 0.6789 at epoch 11 (model saved).
+[2025-04-15 11:26:36,039] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:26:36,039] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:26:36,039] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:26:36,039] INFO: Epoch: 12/100
+[2025-04-15 11:26:52,501] INFO: New best AUC: 0.7206, ACC: 0.6824 at epoch 12 (model saved).
+[2025-04-15 11:26:52,502] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:26:52,502] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:26:52,502] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:26:52,502] INFO: Epoch: 13/100
+[2025-04-15 11:27:08,841] INFO: New best AUC: 0.7254, ACC: 0.6830 at epoch 13 (model saved).
+[2025-04-15 11:27:08,841] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:27:08,841] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:27:08,841] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:27:08,841] INFO: Epoch: 14/100
+[2025-04-15 11:27:25,171] INFO: New best AUC: 0.7287, ACC: 0.6846 at epoch 14 (model saved).
+[2025-04-15 11:27:25,171] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:27:25,171] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:27:25,171] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:27:25,171] INFO: Epoch: 15/100
+[2025-04-15 11:27:41,396] INFO: New best AUC: 0.7344, ACC: 0.6874 at epoch 15 (model saved).
+[2025-04-15 11:27:41,397] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:27:41,397] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:27:41,397] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:27:41,397] INFO: Epoch: 16/100
+[2025-04-15 11:27:57,820] INFO: New best AUC: 0.7370, ACC: 0.6903 at epoch 16 (model saved).
+[2025-04-15 11:27:57,820] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:27:57,820] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:27:57,820] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:27:57,820] INFO: Epoch: 17/100
+[2025-04-15 11:28:14,130] INFO: New best AUC: 0.7386, ACC: 0.6905 at epoch 17 (model saved).
+[2025-04-15 11:28:14,131] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:28:14,131] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:28:14,131] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:28:14,131] INFO: Epoch: 18/100
+[2025-04-15 11:28:30,514] INFO: New best AUC: 0.7406, ACC: 0.6925 at epoch 18 (model saved).
+[2025-04-15 11:28:30,514] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:28:30,514] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:28:30,514] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:28:30,514] INFO: Epoch: 19/100
+[2025-04-15 11:28:46,804] INFO: New best AUC: 0.7425, ACC: 0.6937 at epoch 19 (model saved).
+[2025-04-15 11:28:46,804] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:28:46,805] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:28:46,805] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:28:46,805] INFO: Epoch: 20/100
+[2025-04-15 11:29:03,225] INFO: New best AUC: 0.7441, ACC: 0.6933 at epoch 20 (model saved).
+[2025-04-15 11:29:03,226] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:29:03,226] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:29:03,226] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:29:03,226] INFO: Epoch: 21/100
+[2025-04-15 11:29:19,532] INFO: New best AUC: 0.7450, ACC: 0.6954 at epoch 21 (model saved).
+[2025-04-15 11:29:19,533] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:29:19,533] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:29:19,533] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:29:19,533] INFO: Epoch: 22/100
+[2025-04-15 11:29:35,957] INFO: New best AUC: 0.7464, ACC: 0.6948 at epoch 22 (model saved).
+[2025-04-15 11:29:35,957] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:29:35,957] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:29:35,957] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:29:35,957] INFO: Epoch: 23/100
+[2025-04-15 11:29:52,371] INFO: New best AUC: 0.7470, ACC: 0.6946 at epoch 23 (model saved).
+[2025-04-15 11:29:52,372] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:29:52,372] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:29:52,372] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:29:52,372] INFO: Epoch: 24/100
+[2025-04-15 11:30:08,779] INFO: New best AUC: 0.7483, ACC: 0.6971 at epoch 24 (model saved).
+[2025-04-15 11:30:08,780] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:30:08,780] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:30:08,780] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:30:08,780] INFO: Epoch: 25/100
+[2025-04-15 11:30:25,109] INFO: New best AUC: 0.7484, ACC: 0.6981 at epoch 25 (model saved).
+[2025-04-15 11:30:25,109] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:30:25,109] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:30:25,109] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:30:25,109] INFO: Epoch: 26/100
+[2025-04-15 11:30:41,574] INFO: New best AUC: 0.7499, ACC: 0.6970 at epoch 26 (model saved).
+[2025-04-15 11:30:41,574] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:30:41,574] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:30:41,574] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:30:41,574] INFO: Epoch: 27/100
+[2025-04-15 11:30:57,802] INFO: No improvement in AUC. Counter: 1/6
+[2025-04-15 11:30:57,802] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:30:57,802] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:30:57,802] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:30:57,802] INFO: Epoch: 28/100
+[2025-04-15 11:31:14,054] INFO: No improvement in AUC. Counter: 2/6
+[2025-04-15 11:31:14,054] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:31:14,054] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:31:14,054] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:31:14,054] INFO: Epoch: 29/100
+[2025-04-15 11:31:30,254] INFO: New best AUC: 0.7502, ACC: 0.6974 at epoch 29 (model saved).
+[2025-04-15 11:31:30,254] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:31:30,254] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:31:30,254] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:31:30,254] INFO: Epoch: 30/100
+[2025-04-15 11:31:46,598] INFO: No improvement in AUC. Counter: 1/6
+[2025-04-15 11:31:46,598] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:31:46,598] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:31:46,598] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:31:46,598] INFO: Epoch: 31/100
+[2025-04-15 11:32:02,967] INFO: New best AUC: 0.7507, ACC: 0.6979 at epoch 31 (model saved).
+[2025-04-15 11:32:02,968] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:32:02,968] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:32:02,968] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:32:02,968] INFO: Epoch: 32/100
+[2025-04-15 11:32:19,249] INFO: New best AUC: 0.7509, ACC: 0.6975 at epoch 32 (model saved).
+[2025-04-15 11:32:19,249] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:32:19,249] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:32:19,249] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:32:19,250] INFO: Epoch: 33/100
+[2025-04-15 11:32:35,613] INFO: No improvement in AUC. Counter: 1/6
+[2025-04-15 11:32:35,613] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:32:35,613] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:32:35,613] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:32:35,613] INFO: Epoch: 34/100
+[2025-04-15 11:32:51,741] INFO: No improvement in AUC. Counter: 2/6
+[2025-04-15 11:32:51,741] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:32:51,741] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:32:51,741] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:32:51,741] INFO: Epoch: 35/100
+[2025-04-15 11:33:08,048] INFO: No improvement in AUC. Counter: 3/6
+[2025-04-15 11:33:08,049] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:33:08,049] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:33:08,049] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:33:08,049] INFO: Epoch: 36/100
+[2025-04-15 11:33:24,303] INFO: No improvement in AUC. Counter: 4/6
+[2025-04-15 11:33:24,303] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:33:24,303] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:33:24,303] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:33:24,303] INFO: Epoch: 37/100
+[2025-04-15 11:33:40,534] INFO: New best AUC: 0.7522, ACC: 0.7000 at epoch 37 (model saved).
+[2025-04-15 11:33:40,534] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:33:40,534] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:33:40,534] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:33:40,534] INFO: Epoch: 38/100
+[2025-04-15 11:33:56,865] INFO: No improvement in AUC. Counter: 1/6
+[2025-04-15 11:33:56,865] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:33:56,865] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:33:56,865] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:33:56,865] INFO: Epoch: 39/100
+[2025-04-15 11:34:13,282] INFO: New best AUC: 0.7524, ACC: 0.6990 at epoch 39 (model saved).
+[2025-04-15 11:34:13,282] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:34:13,282] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:34:13,282] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:34:13,282] INFO: Epoch: 40/100
+[2025-04-15 11:34:29,475] INFO: No improvement in AUC. Counter: 1/6
+[2025-04-15 11:34:29,475] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:34:29,475] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:34:29,475] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:34:29,475] INFO: Epoch: 41/100
+[2025-04-15 11:34:45,812] INFO: No improvement in AUC. Counter: 2/6
+[2025-04-15 11:34:45,812] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:34:45,812] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:34:45,812] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:34:45,812] INFO: Epoch: 42/100
+[2025-04-15 11:35:01,959] INFO: No improvement in AUC. Counter: 3/6
+[2025-04-15 11:35:01,959] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:35:01,959] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:35:01,959] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:35:01,959] INFO: Epoch: 43/100
+[2025-04-15 11:35:18,238] INFO: No improvement in AUC. Counter: 4/6
+[2025-04-15 11:35:18,238] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:35:18,238] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:35:18,239] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:35:18,239] INFO: Epoch: 44/100
+[2025-04-15 11:35:34,558] INFO: No improvement in AUC. Counter: 5/6
+[2025-04-15 11:35:34,558] INFO: Training finished. Evaluating on test set using the best model...
+[2025-04-15 11:35:34,558] INFO: Loaded model from: ../saved/ASSIST17_BiMamba_20250415_11.pth
+[2025-04-15 11:35:34,558] INFO: Current model: BiMamba    Using GPU: 1
+[2025-04-15 11:35:34,558] INFO: Epoch: 45/100
+[2025-04-15 11:35:50,679] INFO: No improvement in AUC. Counter: 6/6
+[2025-04-15 11:35:50,679] INFO: Early stopping triggered. No improvement for 6 consecutive epochs.
+[2025-04-15 11:35:50,680] INFO: Final Best AUC: 75.24%  ACC: 69.90%  Best epoch: 39
+[2025-04-15 11:35:54,261] INFO: [Test Result] AUC: 75.50%  ACC: 70.19%
