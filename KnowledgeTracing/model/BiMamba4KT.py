@@ -57,6 +57,10 @@ class BiMamba4KT(nn.Module):
         for i in range(self.num_layers):
             logit_hidd, logit_diff = self.mamba_layers[i](qa_emb, q_diff_emb)  # [bs, L, emb_dim]
 
+        self.y_r_list.append(logit_hidd.detach().cpu().numpy()[:, :, :].mean(axis=1))
+        self.y_d_list.append(logit_diff.detach().cpu().numpy()[:, :, :].mean(axis=1))
+
+
         logit = self.mix(logit_hidd, logit_diff, logit_gru)
 
         logit = self.fc(logit)  # [BS,L,emb_dim(256)-q]

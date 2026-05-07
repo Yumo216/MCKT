@@ -223,4 +223,4 @@
 [2025-04-15 11:35:50,679] INFO: No improvement in AUC. Counter: 6/6
 [2025-04-15 11:35:50,679] INFO: Early stopping triggered. No improvement for 6 consecutive epochs.
 [2025-04-15 11:35:50,680] INFO: Final Best AUC: 75.24%  ACC: 69.90%  Best epoch: 39
-[2025-04-15 11:35:54,261] INFO: [Test Result] AUC: 75.50%  ACC: 70.19%
+[2025-04-15 11:35:54,261] INFO: [Test Result] AUC: 75.50%  ACC: 71.39%

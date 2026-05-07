@@ -45,7 +45,6 @@ class lossFunc(nn.Module):
         pred = self.sig(filtered_pred)
 
         loss = self.crossEntropy(pred, filtered_target.float())
-
         return loss, pred, filtered_target.float()
 
 
@@ -77,3 +76,6 @@ def test_epoch(model, testLoader, loss_func, device):
         ground_truth = torch.cat([ground_truth, a])
     print('loss:', loss.item())
     return performance(ground_truth, prediction)
+
+
+

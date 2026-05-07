@@ -14,7 +14,7 @@ skill = {
     'XES3G5M': 865,
 }
 
-DATASET = datasets['2017']
+DATASET = datasets['XES']
 QUES = question[DATASET]
 
 # Dataloader
@@ -29,7 +29,7 @@ RNN_LAYERS = 1
 OUTPUT = QUES
 
 # Mamba layer
-MAM_LAYERS = 2
+MAM_LAYERS = 1
 DROP_PRO = 0.2
 
 # Mamba block

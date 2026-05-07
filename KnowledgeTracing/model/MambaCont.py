@@ -6,8 +6,8 @@ from KnowledgeTracing.Constant import Constants as C
 from .Mamba.EXBimamba import ExBimamba
 from .AdptiveGRU import AdptiveGRU
 
-json_file_path = '../../KTDataset/XES3G5M/XES_diff.json'
-
+json_file_path = '../../KTDataset/assist2017/AS17_diff.json'
+# '../../KTDataset/XES3G5M/XES_diff.json'
 
 class MambaCont(nn.Module):
     def __init__(self, emb_dim, input_size, num_layers, dropout_prob, d_state, ques_cont):
@@ -23,6 +23,10 @@ class MambaCont(nn.Module):
         self.input_size = input_size
         self.num_layers = num_layers
         self.dropout_prob = dropout_prob
+        self.summary_attn = nn.Sequential(
+            nn.Linear(emb_dim, 1),  # [B,L,D] -> [B,L,1]
+            nn.Softmax(dim=1)    
+        )
 
         # BiMamba layers
         self.mamba_layers = nn.ModuleList([
@@ -35,12 +39,16 @@ class MambaCont(nn.Module):
         ])
         self.fc = nn.Linear(self.input_size, C.QUES)
         self.fusion_fc = nn.Linear(emb_dim+768, emb_dim)
-
+        self.diff_emb = nn.Linear(1, emb_dim)
         self.gru = AdptiveGRU(emb_dim=C.EMB_DIM, output_dim=C.EMB_DIM)
         self.mix = MixingLayer(emb_dim)
+        self.summary_gate = nn.Linear(emb_dim, emb_dim)
 
         self.LayerNorm = nn.LayerNorm(emb_dim, eps=1e-12)
         self.dropout = nn.Dropout(self.dropout_prob)
+
+        self.last_attn = None
+        self.last_q_diff = None
 
     def forward(self, qa, q):  # shape of input: [batch_size, length, 2q ]
         q_emb = self.q_emb(q)
@@ -48,26 +56,46 @@ class MambaCont(nn.Module):
         q_cont = self.ques_cont[q]  # [BS,L,768]
 
         '''Early fusion'''
-        input = self.fusion_fc(torch.cat((qa_emb, q_cont), dim=-1))  # [BS,L,1024]
+        item_emb = self.fusion_fc(torch.cat((qa_emb, q_cont), dim=-1))  # [BS,L,1024]
 
-        item_emb = self.dropout(input)
+        item_emb = self.dropout(item_emb)
         item_emb = self.LayerNorm(item_emb)
 
         '''Rasch diff'''
         difficulty = torch.tensor([self.question_difficulty.get(str(int(q_id)), 0.5) for q_id in q.view(-1)],
                                   dtype=torch.float32)
         q_diff = difficulty.view(q.size(0), q.size(1), 1).to(q_emb.device)
-        q_diff_emb = (1 - q_diff) * q_emb
+        # q_diff_emb = (1 - q_diff) * q_emb
+        q_diff_emb = self.diff_emb(q_diff)
+
         '''AdptiveGRU'''
-        logit_gru = self.gru(qa_emb)  # [bs, L, emb_dim]
+        logit_gru = self.gru(item_emb)  # [bs, L, emb_dim]
 
         '''Parallel Mamba'''
         for i in range(self.num_layers):
-            logit_hidd, logit_diff = self.mamba_layers[i](qa_emb, q_diff_emb)  # [bs, L, emb_dim]
+            logit_hidd, logit_diff = self.mamba_layers[i](item_emb, q_diff_emb)  # [bs, L, emb_dim]
+
+
+
+
+        interaction = torch.matmul(logit_hidd, logit_diff.transpose(-1, -2))  # [B,L,L]
+        interaction = torch.softmax(interaction, dim=-1)
+        cross_info = torch.matmul(interaction, logit_diff)  # [B,L,D]
+        logit_hidd = logit_hidd + cross_info  # 残差融合
 
         logit = self.mix(logit_hidd, logit_diff, logit_gru)
 
+        # summary = torch.mean(logit, dim=1, keepdim=True)  # [B,1,D]
+        attn_weights = self.summary_attn(logit)  # [B,L,1]
+        summary = torch.sum(attn_weights * logit, dim=1, keepdim=True)  # [B,1,D]
+        gate = torch.sigmoid(self.summary_gate(logit))  # [B,L,D]
+        logit = logit + gate * summary
+
         res = self.fc(logit)  # [BS,L,]
+
+        # ===== for visualization =====
+        self.last_attn = attn_weights.squeeze(-1).detach()   # [B,L]
+        self.last_q_diff = q_diff.squeeze(-1).detach()       # [B,L]
 
         return res
 
@@ -102,28 +130,20 @@ class MixingLayer(nn.Module):
     def __init__(self, emb_dim):
         super(MixingLayer, self).__init__()
         # Learnable weights for fusion
-        self.a1 = nn.Parameter(torch.tensor(0.33))  # for mamba_hidden
-        self.a2 = nn.Parameter(torch.tensor(0.33))  # for mamba_diff
-        self.a3 = nn.Parameter(torch.tensor(0.33))  # for adaptive_gru
+        self.weight_raw = nn.Parameter(torch.tensor([0.3, 0.1, 0.6]))
 
         # Optional transformation layer
         self.linear = nn.Linear(emb_dim, emb_dim, bias=True)
 
     def forward(self, hidd_out, diff_out, gru_out):
-        """
-        Inputs:
-            hidd_out: [batch_size, L, D] - from Mamba (response stream)
-            diff_out: [batch_size, L, D] - from Mamba (difficulty stream)
-            gru_out: [batch_size, L, D] - from AdaptiveGRU
-        Returns:
-            fused representation: [batch_size, L, D]
-        """
         # Weighted sum of the three branches
-        z0 = self.a1 * hidd_out + self.a2 * diff_out + self.a3 * gru_out  # [B, L, D]
+        weights = torch.softmax(self.weight_raw, dim=0)
+        z0 = weights[0] * hidd_out + weights[1] * diff_out + weights[2] * gru_out
 
         # Linear transformation
         z_hat = self.linear(z0)  # [B, L, D]
         return z_hat
+
 class FeedForward(nn.Module):
     def __init__(self, d_model, inner_size, dropout=0.2):
         super().__init__()
