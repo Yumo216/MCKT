@@ -25,7 +25,7 @@ class MambaCont(nn.Module):
         self.dropout_prob = dropout_prob
         self.summary_attn = nn.Sequential(
             nn.Linear(emb_dim, 1),  # [B,L,D] -> [B,L,1]
-            nn.Softmax(dim=1)    
+            nn.Softmax(dim=1)
         )
 
         # BiMamba layers

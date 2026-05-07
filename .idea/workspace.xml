@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MCKT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCKT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/Constant/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/evaluation/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/evaluation/eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/evaluation/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/BiMamba4KT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/model/MambaCont.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KnowledgeTracing/saved/ASSIST17_BiMamba_20250415_11.log" beforeDir="false" afterPath="$PROJECT_DIR$/KnowledgeTracing/saved/ASSIST17_BiMamba_20250415_11.log" afterDir="false" />
-    </list>
+    <list default="true" id="c8e386a4-d51c-4d71-a310-e73bda5cd129" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,6 +292,7 @@
       <workItem from="1775460929328" duration="732000" />
       <workItem from="1775461666269" duration="20851000" />
       <workItem from="1775638540118" duration="2419000" />
+      <workItem from="1778139930001" duration="363000" />
     </task>
     <servers />
   </component>
