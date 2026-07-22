@@ -39,3 +39,19 @@ If you encounter any issues during the installation of **Mamba**, please refer t
 run main.py
 ```
 
+## 🤖 Citation
+
+If you find this paper and repository useful for your research, please consider citing:
+
+```bibtex
+@ARTICLE{yao2026mckt,
+  author={Yao, Yumo and Yu, Hai-Tao},
+  journal={IEEE Access},
+  title={{MCKT}: A Parallel Mamba-Based Model for Content-Aware Knowledge Tracing},
+  year={2026},
+  volume={14},
+  pages={70510--70529},
+  doi={10.1109/ACCESS.2026.3688703}
+}
+```
+
